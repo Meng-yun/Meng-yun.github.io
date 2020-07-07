@@ -1,0 +1,332 @@
+.shop-nav {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  /* text-align: center; */
+  position: relative;
+}
+.shop-nav .tit {
+  width: 152px;
+  line-height: 50px;
+
+  /* float: left; */
+  margin: 0 auto;
+}
+.shop-nav .tit a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 26px;
+  font-weight: 600;
+}
+.shop-nav .menu {
+  /* float: right; */
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.shop-nav .menu a {
+  text-decoration: none;
+  color: #666666;
+  float: right;
+  margin-left: 10px;
+}
+.section-inner {
+  background-color: #f4f3f3;
+}
+.section-up .cart-box {
+  margin-top: 20px;
+  background-color: #fff;
+  height: 100%;
+  border-top: 4px solid #000;
+}
+.cart-box .cart-top .step1 {
+  display: block;
+  background: url("../img/gouwuche_1.png") center center no-repeat;
+  height: 90px;
+  line-height: 8888em;
+  overflow: hidden;
+}
+.cart-box .cart-top h3 {
+  text-align: center;
+  font-size: 18px;
+  padding: 24px 0;
+  font-weight: 400;
+}
+.cart-content .cart-content-strip {
+  background-color: #bb8808;
+  text-align: center;
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  /* background: #7e5a00; */
+}
+/* 卡片条的侧面切面 */
+.cart-content-strip::before,
+.cart-content-strip::after {
+  content: "";
+  border-top: 10px solid #7e5a00;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  display: block;
+}
+.cart-content-strip::before {
+  border-right: 10px solid transparent;
+  right: 0;
+}
+.cart-content-strip::after {
+  border-left: 10px solid transparent;
+  left: 0;
+}
+.kong-shop {
+  line-height: 30;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}
+.kong-shop p {
+  /* width: 100%;
+  height: 590px; */
+  display: block;
+}
+.danjia > p {
+  display: inline;
+}
+.kong-shop p .shop-icon {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 57px;
+  height: 92px;
+  margin-right: 32px;
+  padding-bottom: 24px;
+  vertical-align: middle;
+  background: url("../img/icon_blank.png") no-repeat;
+  overflow: hidden;
+  line-height: 100;
+}
+.kong-shop p a {
+  text-decoration: none;
+  color: #0d5b82;
+}
+.full-shop {
+  /* display: none; */
+  width: 92.8571%;
+  margin: 0 auto;
+}
+.full-shop .cart-table {
+  /* padding-bottom: 20px; */
+}
+.full-shop .cart-table th {
+  line-height: 48px;
+  text-align: center;
+  font-size: 14px;
+  color: #333333;
+}
+.full-shop .cart-table .th-one {
+  width: 88px;
+  /* height: 48px; */
+}
+.full-shop .cart-table .th-name {
+  width: 266px;
+}
+.full-shop .cart-table .th-color {
+  width: 88px;
+}
+.full-shop .cart-table .th-price {
+  width: 177px;
+}
+.full-shop .cart-table .th-num {
+  width: 177px;
+}
+.full-shop .cart-table .th-sum {
+  width: 177px;
+}
+.full-shop .cart-table tr > td {
+  /* line-height: 48px; */
+  text-align: center;
+  font-size: 14px;
+}
+.full-shop .cart-table tr > td:nth-child(3) {
+  text-align: left;
+}
+.full-shop .cart-table tr td > img {
+  width: 72px;
+  height: 128px;
+}
+.full-shop .cart-table tr #list {
+  border: 0;
+}
+
+div {
+  display: block;
+}
+#dele-this {
+  text-decoration: none;
+}
+.goodsnum {
+  width: 50px;
+  height: 20px;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  margin: 0 auto 6px;
+}
+#num {
+  width: 46px;
+  height: 16px;
+  line-height: 16px;
+  border: 0;
+  padding: 2px;
+  text-align: center;
+  font-size: 10px;
+  color: #666;
+  vertical-align: top;
+}
+.goodsnum em {
+  display: block;
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 0;
+  font-size: 8px;
+  line-height: 90;
+  cursor: pointer;
+  background: url("../img/btn_arrow_up_down.png") left -10px no-repeat;
+}
+.goodsnum .num_plus {
+  top: 0;
+  bottom: auto;
+  background-position: left top;
+}
+.goodsnum .num_cut {
+  bottom: 0;
+}
+.full-shop .cart-table tr td:last-child div {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  margin: 0 auto 6px;
+}
+.page-num {
+  width: 100%;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.jiesuan {
+  width: 100%;
+  padding: 24px 8%;
+}
+.jiesuan .dele-all {
+  text-decoration: none;
+  margin-left: 40px;
+}
+.jiesuan-box {
+  box-sizing: border-box;
+  padding: 24px;
+  background-color: #fff;
+}
+.jiesuan-box > p {
+  display: block;
+  text-align: right;
+  margin-bottom: 12px;
+  color: #666666;
+}
+
+.jiesuan-box #jianshu {
+  font-size: 18px;
+}
+.jiesuan-box .money {
+  color: red;
+  font-size: 20px;
+}
+.jiesuan-box button {
+  border: 0;
+  padding: 4px 36px;
+  float: right;
+  color: #fff;
+  background-color: #bb8808;
+}
+.footer-box {
+  width: 100%;
+}
+.footer-box .fixd-box {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+}
+.fixd-box .top {
+  display: none;
+  width: 32px;
+  height: 34px;
+  padding-top: 5px;
+  background-color: #666666;
+}
+.top .iconfont {
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin-top: -4px;
+}
+.fixd-box > a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 1px;
+}
+.fixd-box .back-shouye {
+  width: 32px;
+  height: 35px;
+  /* background-color: #1a1a1a; */
+  /* opacity: 0.5; */
+  /* padding: 2.4px 0; */
+  /* line-height: 20px; */
+  overflow: hidden;
+}
+.fixd-box .back-shouye span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../img/icon (1).png") -60px -1080px no-repeat;
+}
+.fixd-box .back-shouye,
+.call-kefu {
+  background-color: #bbb;
+  font-size: 12px;
+  width: 32px;
+  height: 34px;
+}
+.footer-box {
+  padding-top: 4%;
+  background-color: #f4f3f3;
+}
+.footer-box .logo {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+}
+.footer-box p {
+  color: #818181;
+  line-height: 36px;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+}
+.footer-box p > a {
+  text-decoration: none;
+  color: #818181;
+}

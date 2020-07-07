@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/gouwuche.css" />
+    <link rel="stylesheet" href="../css/iconfont-jiantou.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="shop-nav">
+        <div class="tit">
+          <a href="#">TRENDIANO</a>
+        </div>
+        <div class="menu">
+          <a href="#">购物袋[<span>0</span>]</a>
+          <a href="xiangqing.html">我的收藏</a>
+          <a href="#">我的账户</a>
+          <a href="zhuce.html">注册</a>
+          <a href="denglu.html">登录</a>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="section-inner">
+        <div class="section-up container">
+          <div class="cart-box row">
+            <div class="cart-top">
+              <p class="step1"></p>
+              <h3>购物袋</h3>
+            </div>
+            <div class="cart-content">
+              <div class="cart-content-strip">
+                优惠：单笔消费，满699元免邮
+              </div>
+              <div class="kong-shop">
+                <p>
+                  <b class="shop-icon"></b>购物袋还是空的哦，
+                  <a href="xiangqing.html">快去挑选心仪的衣服吧~</a>
+                </p>
+              </div>
+              <div class="full-shop">
+                <table class="cart-table">
+                  <thead>
+                    <tr>
+                      <th class="th-one">&nbsp;</th>
+                      <th class="th-one">&nbsp;</th>
+                      <th class="th-name">商品名称</th>
+                      <th class="th-color">颜色/尺码</th>
+                      <th class="th-price">单价</th>
+                      <th class="th-num">数量</th>
+                      <th class="th-sum">小计</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-num">1</div>
+        <div class="jiesuan">
+          <label for="all-check">
+            <input type="checkbox" id="all-check" />全选</label
+          >
+          <a href="javascript:void(0);" class="dele-all">删除已选</a>
+        </div>
+        <div class="section-down container">
+          <div class="jiesuan-box row">
+            <p>已选：<span id="jianshu">5</span>件</p>
+            <p>总计金额（不含运费）：￥<span class="money">3595.00</span></p>
+            <button type="button">马上结算</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-box">
+        <div class="fixd-box">
+          <a class="top" href="#"
+            >TOP <span class="iconfont icon-xiajiantou .xiajiantou"></span
+          ></a>
+          <a class="back-shouye" href="../index.html">返回首页</a>
+          <a class="call-kefu" href="#">联系客服</a>
+        </div>
+        <span class="logo">TRENDIANO</span>
+        <p>
+          <a href="#">隐私声明</a>
+          <a href="#">联系我们</a>
+        </p>
+        <p>
+          Copyright @ 2010- 广州赫基信息科技有限公司版权所有
+          增值电信业务经营许可证
+        </p>
+      </div>
+    </footer>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+      var goodsArr = [
+        {
+          goodsimg: "../img/goods-img.jpg",
+          goodsText:
+            "[促销] Tre春夏大减价7-9 <br>TRENDIANO</br>【2件9折 3件8折】宽松连帽短袖风衣外套</br>货号：3RC2092100010",
+          goodsSize: "绿色/M",
+          goodsPrice: "719",
+          goodsNum: "1",
+        },
+        {
+          goodsimg: "../img/goods-img2.jpg",
+          goodsText:
+            "[促销] Tre春夏大减价7-9 <br>TRENDIANO</br>【2件9折 3件8折】宽松连帽短袖风衣外套</br>货号：3RC2092100010",
+          goodsSize: "米白/M",
+          goodsPrice: "719",
+          goodsNum: "1",
+        },
+        {
+          goodsimg: "../img/goods-img2.jpg",
+          goodsText:
+            "[促销] Tre春夏大减价7-9 <br>TRENDIANO</br>【2件9折 3件8折】宽松连帽短袖风衣外套</br>货号：3RC2092100010",
+          goodsSize: "米白/L",
+          goodsPrice: "719",
+          goodsNum: "1",
+        },
+        {
+          goodsimg: "../img/goods-img.jpg",
+          goodsText:
+            "[促销] Tre春夏大减价7-9 <br>TRENDIANO</br>【2件9折 3件8折】宽松连帽短袖风衣外套</br>货号：3RC2092100010",
+          goodsSize: "绿色/XL",
+          goodsPrice: "719",
+          goodsNum: "1",
+        },
+        {
+          goodsimg: "../img/goods-img.jpg",
+          goodsText:
+            "[促销] Tre春夏大减价7-9 <br>TRENDIANO</br>【2件9折 3件8折】宽松连帽短袖风衣外套</br>货号：3RC2092100010",
+          goodsSize: "绿色/L",
+          goodsPrice: "719",
+          goodsNum: "1",
+        },
+      ];
+      if (goodsArr.length) {
+        $(".full-shop").addClass("show");
+        $(".kong-shop").addClass("hide");
+        function showArr(ary) {
+          ary.forEach(function (ele, index) {
+            var goodsTr = $("<tr>");
+            goodsTr.html(
+              `<td> <input class="radio-btn" type="checkbox"></td>
+                <td><img src='${ele.goodsimg}' /></td>
+
+                <td>${ele.goodsText}</td>
+                <td>
+                  <select  id="list">
+                  <option value="绿色/S">${ele.goodsSize}
+                   </option>
+                   </select>
+
+                </td>
+               <td class="danjia">
+               <p>￥</p><p class="price">${ele.goodsPrice}</p>
+               </td>
+               <td>
+                 <div class="goodsnum">
+                  <em class="num_plus"></em>
+                  <input type="text"
+                  readonly value="1"
+                  id="num" autocomplete="off"/>
+                  <em class="num_cut"></em>
+                  </div>
+                  <a id="dele-this" href="javascript:void(0);">收藏/删除</a>
+               </td>
+                <td>
+                  ￥<div class="xiaoji">719.00</div>
+                </td>`
+            );
+            $(".cart-table").append(goodsTr);
+          });
+        }
+        showArr(goodsArr);
+
+        //商品数量按钮的增加和减少
+        $(".num_plus").click(function () {
+          var InputText = $(this).siblings("input").val();
+          var danjia = $(this).parents("tr").find(".price").text();
+          InputText++;
+          $(this).siblings("input").val(InputText);
+          $(this)
+            .parents("tr")
+            .find(".xiaoji")
+            .text(danjia * InputText);
+          getTotal($(".radio-btn"));
+        });
+        $(".num_cut").click(function () {
+          var InputText = $(this).siblings("input").val();
+          var danjia = $(this).parents("tr").find(".price").text();
+          InputText--;
+          if (InputText <= 0) {
+            InputText = 0;
+          }
+          $(this).siblings("input").val(InputText);
+          $(this)
+            .parents("tr")
+            .find(".xiaoji")
+            .text(danjia * InputText);
+          getTotal($(".radio-btn"));
+        });
+
+        //  实现复选框全选和全不选
+        $(function () {
+          $('input[type="checkbox"]').prop("checked", true);
+          $("#all-check").change(function () {
+            var flage = $(this).is(":checked");
+
+            $("input[type=checkbox]").each(function () {
+              $(this).prop("checked", flage);
+            });
+          });
+          getTotal($(".radio-btn"));
+        });
+        // 点击单选的复选框
+        $(".radio-btn").change(function () {
+          var flage = $(this).prop("checked");
+          if (flage) {
+            var allchecked = true;
+            $(".radio-btn").each(function () {
+              if (!$(this).prop("checked")) {
+                allchecked = false;
+              }
+            });
+            $("#all-check").prop("checked", allchecked);
+          } else {
+            $("#all-check").prop("checked", false);
+          }
+          getTotal($(".radio-btn"));
+        });
+
+        //删除已选按钮
+        $(".dele-all").click(function () {
+          $(".radio-btn").each(function () {
+            if ($(this).prop("checked")) {
+              xuanNum++;
+              $(this).parents("tr").remove();
+            }
+          });
+          getTotal($(".radio-btn"));
+        });
+        // 计算总价和选中商品数量 函数
+        // 查看当前页面的所有商品 看他们的单选复选框是否选中 如果选中的话算在总价内
+        function getTotal(goods) {
+          var totalNum = 0;
+          var totalPrice = 0;
+          goods.each(function () {
+            if ($(this).prop("checked")) {
+              totalNum =
+                totalNum + $(this).parent().siblings().find("#num").val() * 1;
+              totalPrice =
+                totalPrice +
+                $(this).parent().siblings().find("#num").val() *
+                  1 *
+                  $(this).parent().siblings().find(".xiaoji").text() *
+                  1;
+            }
+          });
+          $("#jianshu").text(totalNum);
+          $(".money").text(totalPrice);
+        }
+      } else {
+        $(".kong-shop").addClass("show");
+        $(".full-shop").css("display", "none");
+      }
+      //footer 中的右下角定位
+      (function () {
+        $(window).scroll(function () {
+          var distance = $(window).scrollTop();
+          if (distance >= 40) {
+            $(".top").css("display", "block");
+          } else {
+            $(".top").css("display", "none");
+          }
+        });
+      })();
+      // 当前删除按钮
+      $("table").on("click", "tr #dele-this", function () {
+        $(this).parents("tr").remove();
+        getTotal($(".radio-btn"));
+      });
+    </script>
+  </body>
+</html>

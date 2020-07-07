@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css//bootstrap.min.css" />
+    <link rel="stylesheet" href="" />
+    <title>用户登录</title>
+    <style>
+      *{
+        /* box-sizing: border-box; */
+      }
+      .wrap{
+        position: relative;
+        min-width: 950px;
+        height: 100%;
+        min-height: 625px;
+        background: url('../img/denglu1.jpg') center center no-repeat;
+        background-size: cover;
+      }
+      .login{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     outline: 0;
+      }
+      .box{   
+        margin-left:80px;
+        z-index: 2;
+        width: 323px;
+        height: 296px;
+        display: block;
+        padding: 20px 20px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        border: 1px solid #ccc;
+        background-color: #fff;
+      
+      }
+      .box-text{
+        height: 266px;
+        display: block;
+        width:323px;
+       position: absolute;
+       top: 0%;
+       right: 0%;
+        padding: 0 30px;
+        box-sizing: border-box;
+       
+      }
+      .box-text h3{
+        height: 26px;
+        line-height: 26px;
+        bottom: 8px;
+      }
+      h3{
+        display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+      }
+      input[type='text']{
+    height: 26px;
+    padding: 3px;
+    border: 1px solid #f0f0ef;
+    line-height: 26px;
+    text-rendering: auto;
+    margin: 8px 0px;
+      }
+      #number{
+        width: 97%;
+      }
+      #textnum,#phonenum{
+        width: 60%;
+      }
+      .yzimg{
+        width: 40%;
+      }
+      .yzimg img{
+        height: 30px;
+        width: 90px;
+      }
+      button{
+        background-color: #f93d69;
+        color: #fff;
+        border: 0;
+        height: 28px;
+      }
+      #denglu{
+        margin: 6px 0px;
+        width: 100%;
+      }
+      .tiaozhuan{
+        margin-top: 10px;
+        width: 100%;
+         text-align: right;
+      }
+      .tiaozhuan a{
+        text-decoration: none;
+        color: #0D5B82;
+        font-size: 12px;
+       
+      }
+     .tishi,.tishi2{
+       display: none;
+       height: 20px;
+       color: #f93d69;
+       font-size: 12px;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <a class="login" href="../index.html">
+       </a>
+          <div class="box ">
+            <div class="box-text">
+            <h3>欢迎回来！请登录</h3>
+            <input id='number' type="text" placeholder="手机号码"></br>
+            <input id='textnum' type="text" placeholder="验证码"><span class="yzimg"><img src="../img/kaptcha.jpg" alt=""></span>
+            <input id='phonenum' type="text" placeholder="手机动态码"><button>获取验证码</button> 
+            <div class="tishi"></div>
+            <div class="tishi2"></div>
+            <button type="submit" id='denglu' class="lading">登录</button>
+            <div class="tiaozhuan">
+              <a class="zhuce" href="zhuce.html">我要注册</a>
+              <a href="javascript:void(0)">忘记密码</a>
+            </div>
+           </div>
+
+          </div>
+     
+     
+    </div>
+    <script src="../js//jquery-3.4.1.min.js"></script>
+    <script>
+     $('.lading').click(function(){
+     var res=/^[1][3,5,6,7,8,9][0-9]{9}/
+     var yzres=1325
+     var phoneText=$('#number').val()
+     var Textnum =$('#textnum').val()*1
+ 
+      
+   if(res.test(phoneText)){
+    $('.tishi').css('display',"none")
+    $('.tiaozhuan').css('margin-top','10px')
+   }else{
+     $('.tishi').css('display',"block")
+     $('.tiaozhuan').css('margin-top','0px')
+     $('.tishi').text('手机号码格式不正确')
+   }
+   if(yzres===Textnum){
+    $('.tishi2').css('display',"none")
+  
+   }else{
+     $('.tishi2').css('display',"block")
+     $('.tishi2').text('请填写正确的验证码')
+   }
+     })
+    
+    </script>
+  </body>
+</html>
